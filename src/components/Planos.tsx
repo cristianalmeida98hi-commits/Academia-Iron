@@ -29,42 +29,43 @@ export default function Planos({ onOpenEnroll }: PlanosProps) {
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch pt-6">
           {PLANS_DATA.map((plan) => (
             <div
               key={plan.id}
-              className={`relative flex flex-col justify-between rounded-xl p-6 md:p-8 bg-zinc-900/40 border transition-all duration-300 ${
+              className={`relative flex flex-col justify-between rounded-xl p-6 md:p-8 transition-all duration-500 hover:scale-[1.02] ${
                 plan.recommended
-                  ? "border-brand-red/50 shadow-2xl shadow-brand-red/10 bg-gradient-to-b from-zinc-900/50 via-zinc-900/40 to-black"
-                  : "border-white/5 bg-zinc-900/30 hover:border-brand-red/20"
+                  ? "border border-brand-red ring-2 ring-brand-red/40 bg-zinc-950 shadow-[0_0_50px_rgba(202,18,22,0.2)] md:scale-[1.05] md:-translate-y-1.5 z-10"
+                  : "border border-white/5 bg-zinc-900/30 hover:border-brand-red/25 hover:bg-zinc-900/40"
               }`}
             >
               
               {/* Highlight Ribbon */}
               {plan.recommended && (
-                <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-brand-red text-white text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full shadow-lg">
-                  ★ {plan.badge} ★
+                <div className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-brand-red via-red-500 to-brand-red text-white text-[10px] font-black uppercase tracking-widest px-5 py-2 rounded-full shadow-lg shadow-brand-red/30 flex items-center gap-1">
+                  <Star className="w-3 h-3 fill-white animate-pulse" />
+                  <span>{plan.badge}</span>
                 </div>
               )}
               
               {!plan.recommended && plan.badge && (
-                <div className="absolute top-4 right-4 bg-zinc-900 text-zinc-400 text-[10px] font-bold uppercase tracking-widest px-2.5 py-0.5 rounded border border-white/5">
+                <div className="absolute top-4 right-4 bg-zinc-900/80 text-zinc-400 text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded border border-white/10">
                   {plan.badge}
                 </div>
               )}
 
               {/* Top content */}
               <div>
-                <h3 className="font-display font-bold text-xl text-white uppercase tracking-wider mt-2">
+                <h3 className={`font-display font-black text-2xl uppercase tracking-wider mt-2 ${plan.recommended ? "text-brand-red" : "text-white"}`}>
                   {plan.name}
                 </h3>
                 
                 {/* Visual Price tag */}
                 <div className="my-6">
-                  <span className="text-[10px] text-zinc-550 uppercase tracking-widest block font-mono">Mensalidade</span>
+                  <span className="text-[10px] text-zinc-500 uppercase tracking-widest block font-mono">Mensalidade</span>
                   <div className="flex items-baseline gap-1 mt-1">
-                    <span className="text-sm font-bold text-zinc-400">R$</span>
-                    <span className="text-4xl md:text-5xl font-display font-black text-white tracking-tighter">
+                     <span className={`text-sm font-bold ${plan.recommended ? "text-brand-red" : "text-zinc-400"}`}>R$</span>
+                     <span className="text-4xl md:text-5xl font-display font-black text-white tracking-tighter">
                       {plan.price.toFixed(2).split(".")[0]}
                     </span>
                     <span className="text-xl font-bold text-white">
@@ -74,16 +75,20 @@ export default function Planos({ onOpenEnroll }: PlanosProps) {
                   </div>
                 </div>
 
-                <div className="h-px bg-white/5 w-full mb-6"></div>
+                <div className="h-px bg-white/10 w-full mb-6"></div>
 
                 {/* Features List */}
                 <ul className="space-y-3.5 mb-8 text-left">
                   {plan.features.map((feat, index) => (
                     <li key={index} className="flex items-start gap-3 text-xs">
-                      <div className="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full bg-brand-red/10 border border-brand-red/20 flex items-center justify-center text-brand-red">
+                      <div className={`mt-0.5 flex-shrink-0 w-4.5 h-4.5 rounded-full flex items-center justify-center border ${
+                        plan.recommended 
+                          ? "bg-brand-red/20 border-brand-red text-brand-red shadow-sm shadow-brand-red/30" 
+                          : "bg-white/5 border-white/10 text-white/70"
+                      }`}>
                         <Check className="w-2.5 h-2.5 font-bold" />
                       </div>
-                      <span className="text-zinc-400 font-normal leading-snug">{feat}</span>
+                      <span className={`font-normal leading-snug ${plan.recommended ? "text-zinc-200" : "text-zinc-400"}`}>{feat}</span>
                     </li>
                   ))}
                 </ul>
@@ -92,13 +97,13 @@ export default function Planos({ onOpenEnroll }: PlanosProps) {
               {/* Subscription CTA buttons */}
               <button
                 onClick={() => onOpenEnroll(plan.id)}
-                className={`w-full py-3.5 uppercase font-bold text-xs tracking-wider rounded-xs transition-all duration-300 cursor-pointer ${
+                className={`w-full py-4 uppercase font-black text-xs tracking-widest rounded-xs transition-all duration-300 cursor-pointer ${
                   plan.recommended
-                    ? "bg-brand-red hover:bg-brand-red-hover text-white shadow-xl shadow-brand-red/10 hover:scale-[1.02]"
-                    : "bg-zinc-900 border border-white/10 hover:bg-zinc-800 text-white"
+                    ? "bg-brand-red hover:bg-brand-red-hover text-white shadow-xl shadow-brand-red/35 hover:scale-[1.02] active:scale-95"
+                    : "bg-zinc-900 border border-white/10 hover:bg-zinc-800 text-white hover:border-white/20"
                 }`}
               >
-                Iniciar no {plan.name}
+                Matricular no {plan.name}
               </button>
 
             </div>

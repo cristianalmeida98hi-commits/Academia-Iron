@@ -94,7 +94,7 @@ export const PLANS_DATA: Plan[] = [
       "Vestiários completos + armários"
     ],
     recommended: true,
-    badge: "Mais Vendido"
+    badge: "Mais Popular"
   },
   {
     id: "black",
