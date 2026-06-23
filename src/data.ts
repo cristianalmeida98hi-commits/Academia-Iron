@@ -3,13 +3,13 @@ import { Plan, Lesson, Testimonial, StructureItem, SEOMetric } from "./types";
 export const ACADEMY_INFO = {
   name: "Iron Pulse Fitness",
   slogan: "Treine forte. Evolua sempre.",
-  address: "Rua das Forças, 1200",
+  address: "Rua das Palmeiras, 245",
   neighborhood: "Centro",
   city: "Guareí",
   state: "SP",
   zipCode: "18250-000",
-  whatsapp: "(15) 99999-8888",
-  whatsappUrl: "https://wa.me/5515999998888?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Iron%20Pulse%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20matr%C3%ADculas.",
+  whatsapp: "(15) 9XXXX-XXXX",
+  whatsappUrl: "https://wa.me/5515999999999?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Iron%2520Pulse%20e%20gostaria%20de%20saber%20mais%20sobre%20as%20matr%C3%ADculas.",
   instagram: "@ironpulsefitness",
   instagramUrl: "https://instagram.com/ironpulsefitness",
   hours: [

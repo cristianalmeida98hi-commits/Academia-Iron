@@ -183,11 +183,11 @@ export default function Contato() {
                   className="w-full py-4 bg-brand-red hover:bg-brand-red-hover text-white text-xs font-bold uppercase tracking-wider rounded-xs transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-brand-red/10"
                 >
                   <Send className="w-3.5 h-3.5" />
-                  Enviar Mensagem de Teste
+                  Enviar Mensagem
                 </button>
 
                 <p className="text-[10px] text-zinc-550 text-center">
-                  *Esta caixa simula a recepção de leads em canais comerciais reais.
+                  🔒 Seus dados estão seguros. Responderemos em poucas horas no seu e-mail cadastrado.
                 </p>
 
               </form>
@@ -198,11 +198,11 @@ export default function Contato() {
                 </div>
                 
                 <h4 className="text-lg font-display font-bold text-white uppercase tracking-wider">
-                  Sua sugestão foi enviada!
+                  Mensagem Enviada!
                 </h4>
                 
                 <p className="text-xs text-zinc-400 max-w-sm mx-auto">
-                  Olá <span className="text-brand-red font-bold">{name}</span>, sua simulação de mensagem está completa. Em um ambiente real, o dono receberia no email cadastrado.
+                  Olá <span className="text-brand-red font-bold">{name}</span>! Sua mensagem foi transmitida com sucesso. Fique de olho na sua caixa de entrada no e-mail: <span className="text-white font-semibold">{email}</span>.
                 </p>
 
                 <button

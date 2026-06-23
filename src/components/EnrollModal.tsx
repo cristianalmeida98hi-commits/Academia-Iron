@@ -159,35 +159,35 @@ export default function EnrollModal({ isOpen, onClose, selectedPlanId }: EnrollM
             </button>
 
             <p className="text-[10px] text-zinc-500 text-center mt-3">
-              *Este formulário faz parte da demonstração de fechamento visual de alta conversão.
+              🔒 Seus dados estão seguros e serão transmitidos para nossa equipe de atendimento.
             </p>
           </form>
         ) : (
-          <div className="p-8 text-center space-y-5">
-            <div className="w-16 h-16 bg-[#0a0a0a] border border-brand-red/25 rounded-full flex items-center justify-center mx-auto text-brand-red">
+          <div className="p-8 text-center space-y-5 font-sans">
+            <div className="w-16 h-16 bg-brand-red/10 border border-brand-red/20 rounded-full flex items-center justify-center mx-auto text-brand-red">
               <Check className="w-8 h-8" />
             </div>
 
             <div className="space-y-2">
               <h3 className="text-2xl font-display font-black text-white uppercase tracking-tighter italic">
-                Inscrição Iniciada!
+                Pré-Inscrição Enviada!
               </h3>
               <p className="text-sm text-zinc-350 max-w-sm mx-auto font-light leading-relaxed">
-                Parabéns, <span className="font-bold text-brand-red">{name}</span>! Se este fosse um site real, sua matrícula no <span className="font-bold text-brand-red">{selectedPlanDetails?.name}</span> seria registrada instantaneamente no banco de dados.
+                Parabéns, <span className="font-semibold text-brand-red">{name}</span>! Sua pré-inscrição para o <span className="font-semibold text-brand-red">{selectedPlanDetails?.name}</span> foi registrada com sucesso.
               </p>
-              <p className="text-xs text-zinc-500">
-                Como este é um protótipo de alta fidelidade para venda, você pode testar a experiência com o cliente final enviando uma simulação direto para o WhatsApp deles!
+              <p className="text-xs text-zinc-500 max-w-sm mx-auto leading-relaxed">
+                Para acelerar a liberação da sua carteirinha e agendar seu treino de demonstração, clique abaixo para enviar sua ficha diretamente para nosso suporte por WhatsApp!
               </p>
             </div>
 
             <div className="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href={`${ACADEMY_INFO.whatsappUrl}&text=Ol%C3%A1!%20Sou%20${encodeURIComponent(name)}%20e%20gostaria%20de%20confirmar%20minha%20matr%C3%ADcula%20no%20${encodeURIComponent(selectedPlanDetails?.name || "Plano")}.%20Meu%20foco%20%C3%A3%20${encodeURIComponent(goal)}`}
+                href={`https://wa.me/5515999999999?text=Ol%C3%A1!%20Fiz%20minha%20pr%C3%A9-inscri%C3%A7%C3%A3o%20no%20site%20da%20Iron%20Pulse:%20Meu%20nome%20%C3%A9%20${encodeURIComponent(name)},%20escolhi%20o%20${encodeURIComponent(selectedPlanDetails?.name || "Plano")}%20com%20o%20objetivo%20de%20${encodeURIComponent(goal)}.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-5 py-3 bg-green-600 hover:bg-green-700 text-white font-bold text-xs uppercase tracking-wider rounded-xs transition-all duration-350 flex items-center justify-center gap-2"
               >
-                Simular no WhatsApp
+                Concluir por WhatsApp
               </a>
               <button
                 type="button"

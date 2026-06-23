@@ -1,5 +1,4 @@
 import { useState } from "react";
-import DemoBanner from "./components/DemoBanner";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Sobre from "./components/Sobre";
@@ -9,7 +8,6 @@ import Testimonials from "./components/Testimonials";
 import Contato from "./components/Contato";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
-import SEOInspector from "./components/SEOInspector";
 import EnrollModal from "./components/EnrollModal";
 
 export default function App() {
@@ -29,9 +27,6 @@ export default function App() {
   return (
     <div id="iron-pulse-app-root" className="min-h-screen bg-brand-black text-gray-100 flex flex-col font-sans overflow-x-hidden selection:bg-brand-red selection:text-white">
       
-      {/* Permanent Demo / High Fidelity Amostra Banner */}
-      <DemoBanner />
-
       {/* Permanent Header Navigation */}
       <Header onOpenEnroll={handleOpenEnroll} />
 
@@ -61,9 +56,6 @@ export default function App() {
 
       {/* Fixed quick conversational CTA */}
       <WhatsAppButton />
-
-      {/* Custom active Search Inspector (Presentation Tool) */}
-      <SEOInspector />
 
       {/* Subscription capture lightbox form */}
       <EnrollModal
