@@ -1,0 +1,6 @@
+{
+  "name": "Iron Pulse Fitness",
+  "description": "Website demo profissional para a academia Iron Pulse Fitness em Guareí - SP. Inclui planos, turmas, aulas, depoimentos e SEO otimizado.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
